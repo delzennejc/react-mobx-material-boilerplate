@@ -1,0 +1,23 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "extends": ["standard", "standard-react"],
+  "rules": {
+    "no-tabs": 0,
+    "indent": [2, "tab"],
+    "react/jsx-indent": [2, "tab"],
+		"react/prop-types": 0,
+		"jsx-quotes": 0,
+		"react/jsx-indent-props": [2, "tab"]
+  },
+  "parser": "babel-eslint"
+}

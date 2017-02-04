@@ -1,0 +1,5 @@
+@import "../../helpers/colors.helper.css";
+
+.button {
+	background-color: $buttonColor;
+}
