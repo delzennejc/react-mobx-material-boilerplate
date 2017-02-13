@@ -22,14 +22,14 @@ npm start
 ```
 
 Features:
-[x] Server Side Rendering
-[x] CSS-Modules
-[x] Material-UI
-[x] React-Router
-[ ] Webpack 2
-[ ] Code Spliting
-[ ] Tree-Shaking
-[ ] Offline-First
-[ ] Test unitaires
+- [x] Server Side Rendering
+- [x] CSS-Modules
+- [x] Material-UI
+- [x] React-Router
+- [ ] Webpack 2
+- [ ] Code Spliting
+- [ ] Tree-Shaking
+- [ ] Offline-First
+- [ ] Tests unitaires
 
 MIT
