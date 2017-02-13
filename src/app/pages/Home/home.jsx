@@ -3,8 +3,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 import styles from './style.css'
 import cssObj from './style.oss'
 
-console.log(cssObj)
-
 const Home = (props) => (
 	<div className={styles.textContainer}>
 		<p>{props.storeX.text}</p>

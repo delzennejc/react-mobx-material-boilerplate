@@ -6,4 +6,5 @@ import {observable} from 'mobx'
  */
 export class Store {
 	@observable text = 'React + MobX + React Router + Material-UI + CSS Modules'
+	@observable about = 'JavaScript is really Cool !'
 }

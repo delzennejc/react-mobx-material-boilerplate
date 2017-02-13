@@ -4,6 +4,7 @@ const path = require('path');
 const buildPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   entry: [path.join(__dirname, '/src/app/app.jsx')],
@@ -21,12 +22,18 @@ const config = {
   },
   plugins: [
     //Minify the bundle
+		new ExtractTextPlugin('index.css', { allChunks: true }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         //supresses warnings, usually from module minification
-        warnings: false
+        warnings: false,
       }
     }),
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify('production')
+			}
+		}),
     //Allows error warnings but does not stop compiling. Will remove when eslint is added
     new webpack.NoErrorsPlugin(),
     //Transfer Files
@@ -51,11 +58,14 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css-loader!postcss?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
+				loader: ExtractTextPlugin.extract('style', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss')
       },
 			{
         test: /\.oss$/,
-        loader: 'cssobjects'
+        loaders: [
+					'cssobjects',
+					'postcss'
+				]
       }
     ]
   },
